@@ -1,0 +1,21 @@
+CREATE TABLE 学生(id INT,名字 VARCHAR(50),年龄 INT,性别 VARCHAR(50),班级 INT);
+
+-- 查询每个班级的班级人数
+ -- SELECT count（班级），班级 班级编号 FROM 学生
+ -- GROUP BY 班级；
+-- 分别统计男生女的数量
+ -- SELECT count（性别），性别 FROM 学生
+ -- GROUP BY 性别；
+-- 找出班级人数超过三人的班级编号
+ -- SELECT 班级 FROM 学生
+ -- GROUP BY 班级
+ -- HAVING count（*）>3；
+-- 查询一班男生，女生的人数
+ -- 1.先找出一班所有的人，按照性别分组，找出每组的数量
+  -- SELECT 性别，count(性别) FROM 学生 WHERE 班级=1
+	-- GROUP BY 性别；
+-- 查询班内男生的数量超过1人的班级编号
+ -- 1.先找出所有男生 再按照班级分组 每组数量大于1
+ -- SELECT 班级 编辑编号 FROM 学生 WHERE 性别=“男”
+ -- GROUP BY 班级；
+ -- HAVING count（班级）>1；

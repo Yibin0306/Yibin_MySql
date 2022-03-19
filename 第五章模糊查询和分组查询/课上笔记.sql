@@ -1,0 +1,36 @@
+-- 1.模糊查询
+ -- 搜索：
+ -- 1.1关键字 LIKE
+ -- 1.1通配符 _ :匹配一个任意字符  % :匹配0-n个字符
+ -- 查询名字里带“机”的商品
+ -- SELECT * FROM 表名 WHERE 列 like “%机%”
+ -- 查询第二个字符事饭
+ -- SELECT * FROM 表名 WHERE NAME LIKE “_饭%”
+	
+-- 2.聚合函数
+ -- 1.求和 sum（）
+  -- 计算表中所有商品总价格
+	 -- SELECT sum（列名）FROM 表名；
+ -- 2.最大值 max（）
+  -- 最贵商品
+	 -- SELECT max（列名）FROM 表名；
+ -- 3.最小值 min（）
+  -- 最便宜的商品
+   -- SELECT min（列名）FROM 表名；
+ -- 4.平均值 avg（）
+  -- 平均价
+	 -- SELECT avg（列名）FROM 表名；
+ -- 5.统计数量 count（）
+  -- 共有几件商品
+	 -- SELECT count（*）FROM 表名
+ 
+-- 3.分组查询
+ -- 关键字 GROUP BY
+  -- 分别查询出各类商品的数量
+	 -- SELECT count（起一个列名），起一个列名 FROM 表名
+	 -- GROUP BY 起一个列名；
+ -- 分组后数据二次删选 HAVING
+  -- 查询同类商品超过一件的商品信息
+	 -- SELECT 列名，count（*） FROM 表名
+	 -- GROUP BY 列名
+	 -- HAVING count（*）> 1；
